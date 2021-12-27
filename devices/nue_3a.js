@@ -294,4 +294,18 @@ module.exports = [
             return {left: 1, right: 2};
         },
     },
+        {
+        zigbeeModel: ['LXN-4S27LX1.0'], 
+        manufacturerName: ['3A Smart Home DE'}],
+        model: 'LXN-4S27LX1.0',
+        vendor: 'Nue / 3A',
+        description: '4 Gang Switch',
+        whiteLabel: [{vendor: '3A Smart Home DE', model: '3A Smart Home DE'}],
+        extend: extend.switch(),
+        exposes: [e.switch().withEndpoint('left'), e.switch().withEndpoint('l2'),
+            e.switch().withEndpoint('l3'), e.switch().withEndpoint('right')],
+        meta: {multiEndpoint: true},
+        endpoint: (device) => {
+            return {left: 1, l2: 2, l3: 3, right: 4};
+    }, 
 ];
